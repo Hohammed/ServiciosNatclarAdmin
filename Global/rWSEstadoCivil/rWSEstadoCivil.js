@@ -11,7 +11,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 3000
+var puerto = 8081
 
 /*controller*/
 var estadoCivilController = require('./Controller/EstadoCivilController')
