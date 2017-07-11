@@ -3,7 +3,6 @@ var config = require('./config').config
 
 /*helper*/
 //var sql = require('mssql')
-/**/
 
 function query(sql, procedure, parameters, callBackOk, callBackError) {
     sql.connect(config).then(function () {
