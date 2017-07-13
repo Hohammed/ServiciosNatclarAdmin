@@ -45,3 +45,18 @@ app.use('/service', api)
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
+
+/*
+var apip = express.Router()
+
+apip.route('/puesto')
+    .get(puestoController.listarTodo)
+    .post(puestoController.insertarRegistro)
+
+apip.route('/puesto/:id')
+    .get(puestoController.buscarById)
+    .put(puestoController.modificarRegistro)
+    .delete(puestoController.eliminarRegistro)
+
+exports.api = apip
+*/
