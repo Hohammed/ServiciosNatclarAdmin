@@ -1,13 +1,14 @@
-
 exports.Movimiento = {
 	iIdMovimiento: undefined,
 	vcNumeroDocumento: undefined,
 	iIdRequerimiento: undefined,
 	iItemRQ: undefined,
 	dAprobacion: undefined,
+	vcIdSedeO: undefined,
 	vcIdSede: undefined,
 	iIdSistemaTrabajo: undefined,
 	iIdPuesto: undefined,
+	vcIdAreaNatclarO: undefined,
 	vcIdAreaNatclar: undefined,
 	vbSueldo: undefined,
 	vbSueldoDestaque: undefined,

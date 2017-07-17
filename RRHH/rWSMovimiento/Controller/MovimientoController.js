@@ -36,7 +36,7 @@ buscarById = function (req, res) {
     var iIdMovimiento = {name:"iIdMovimiento", value:req.params.id}
 
     parametros.push(iIdMovimiento);
-    console.log(req.params.id)
+    //console.log(req.params.id)
     MovimientoDao.buscarById(parametros, ok, error)
 }
 
@@ -54,11 +54,13 @@ buscarByFiltro = function (req, res) {
     var vcIdSede = {name:"vcIdSede", value:req.query.vcIdSede}
     var dInicio = {name:"dInicio", value:req.query.dInicio}
     var dFin = {name:"dFin", value:req.query.dFin}
+    var iIdEstado = {name:"iIdEstado", value:req.query.iIdEstado}
 
     parametros.push(vcNumeroDocumento);
     parametros.push(vcIdSede);
     parametros.push(dInicio);
     parametros.push(dFin);
+    parametros.push(iIdEstado);
 
     MovimientoDao.buscarByFiltro(parametros, ok, error)
 }
@@ -66,8 +68,28 @@ buscarByFiltro = function (req, res) {
 insertarRegistro = function (req, res) {
     var Movimiento = model.Movimiento
     Movimiento.iIdMovimiento = req.body.iIdMovimiento
-    Movimiento.vcDescripcion = req.body.vcDescripcion
-
+    Movimiento.vcNumeroDocumento = req.body.vcNumeroDocumento
+    Movimiento.iIdRequerimiento = req.body.iIdRequerimiento
+    Movimiento.iItemRQ = req.body.iItemRQ
+    Movimiento.dAprobacion = req.body.dAprobacion
+    Movimiento.vcIdSedeO = req.body.vcIdSedeO
+    Movimiento.vcIdSede = req.body.vcIdSede
+    Movimiento.iIdSistemaTrabajo = req.body.iIdSistemaTrabajo
+    Movimiento.iIdPuesto = req.body.iIdPuesto
+    Movimiento.vcIdAreaNatclarO = req.body.vcIdAreaNatclarO
+    Movimiento.vcIdAreaNatclar = req.body.vcIdAreaNatclar
+    Movimiento.vbSueldo = req.body.vbSueldo
+    Movimiento.vbSueldoDestaque = req.body.vbSueldoDestaque
+    Movimiento.dCambioSueldo = req.body.dCambioSueldo
+    Movimiento.dInicio = req.body.dInicio
+    Movimiento.dFin = req.body.dFin
+    Movimiento.cPermanente = req.body.cPermanente
+    Movimiento.nvObservacion = req.body.nvObservacion
+    /*Movimiento.iIdEstadoAprobacion = req.body.iIdEstadoAprobacion
+    Movimiento.iIdEstado = req.body.iIdEstado
+    Movimiento.vcUsuarioCreacionApp = req.body.vcUsuarioCreacionApp
+    Movimiento.vcUsuarioModificacionOT = req.body.vcUsuarioModificacionOT
+    Movimiento.DETALLE_XML = req.body.DETALLE_XML*/
     function ok(rowsAffected) {
         if (rowsAffected == 0) {
             res.send("No se llevo a cabo la transacción")
@@ -77,8 +99,29 @@ insertarRegistro = function (req, res) {
     }
     function error(error) {
         res.status(201).send(error)
+        console.log(error)
     }
     MovimientoDao.insertar(Movimiento, ok, error)
+}
+
+//PUT - Confirmar registro
+confirmarRegistro = function (req, res) {
+    var Movimiento = model.Movimiento
+    Movimiento.iIdMovimiento = req.params.id
+    console.log(req.params.id)
+    function ok(rowsAffected) {
+        if (rowsAffected == 0) {
+            res.send("No se llevo a cabo la transacción")
+        } else {
+            res.send('Registro guradado: ID - ' + Movimiento.iIdMovimiento)
+        }
+        console.log("funcion ok")
+    }
+    function error(error) {
+        res.status(201).send(error)
+        console.log(error)
+    }
+    MovimientoDao.confirmar(Movimiento, ok, error)
 }
 
 //PUT - Actualizar registro
@@ -119,5 +162,6 @@ exports.listarTodo = listarTodo
 exports.buscarByFiltro = buscarByFiltro
 exports.buscarById = buscarById
 exports.insertarRegistro = insertarRegistro
+exports.confirmarRegistro = confirmarRegistro
 exports.modificarRegistro = modificarRegistro
 exports.eliminarRegistro = eliminarRegistro

@@ -40,7 +40,8 @@ api.route('/Movimiento/filtro')
 
 api.route('/Movimiento/:id')
     .get(MovimientoController.buscarById)
-    .put(MovimientoController.modificarRegistro)
+    //.put(MovimientoController.modificarRegistro)
+    .put(MovimientoController.confirmarRegistro)
     .delete(MovimientoController.eliminarRegistro)
 
 app.use('/service', api)

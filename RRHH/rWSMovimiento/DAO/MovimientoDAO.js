@@ -29,19 +29,41 @@ function buscarByFiltro(parametros, ok, error) {
 
 function insertar(Movimiento, ok, error) {
     var parameters = []
-    var parameter1 = {
-        name: "iIdMovimiento",
-        //type: sql.VarChar,
-        value: Movimiento.iIdMovimiento
-    }
-    var parameter2 = {
-        name: "vcDescripcion",
-        //type: sql.VarChar,
-        value: Movimiento.vcDescripcion
-    }
-    parameters.push(parameter1);
-    parameters.push(parameter2);
-    helper.transaction(sql, "rhGlobal.SP_TRS_INS_Movimiento", parameters, ok, error)
+    parameters.push({ name: "iIdMovimiento", value: Movimiento.iIdMovimiento })
+    parameters.push({ name: "vcNumeroDocumento", value: Movimiento.vcNumeroDocumento })
+    parameters.push({ name: "iIdRequerimiento", value: Movimiento.iIdRequerimiento })
+    parameters.push({ name: "iItemRQ", value: Movimiento.iItemRQ })
+    parameters.push({ name: "dAprobacion", value: Movimiento.dAprobacion })
+     parameters.push({ name: "vcIdSedeO", value: Movimiento.vcIdSedeO })
+    parameters.push({ name: "vcIdSede", value: Movimiento.vcIdSede })
+    parameters.push({ name: "iIdSistemaTrabajo", value: Movimiento.iIdSistemaTrabajo })
+    parameters.push({ name: "iIdPuesto", value: Movimiento.iIdPuesto })
+    parameters.push({ name: "vcIdAreaNatclarO", value: Movimiento.vcIdAreaNatclarO })
+    parameters.push({ name: "vcIdAreaNatclar", value: Movimiento.vcIdAreaNatclar })
+    parameters.push({ name: "vbSueldo", value: Movimiento.vbSueldo })
+    parameters.push({ name: "vbSueldoDestaque", value: Movimiento.vbSueldoDestaque })
+    parameters.push({ name: "dCambioSueldo", value: Movimiento.dCambioSueldo })
+    parameters.push({ name: "dInicio", value: Movimiento.dInicio })
+    parameters.push({ name: "dFin", value: Movimiento.dFin })
+    parameters.push({ name: "cPermanente", value: Movimiento.cPermanente })
+    parameters.push({ name: "nvObservacion", value: Movimiento.nvObservacion })
+    /*parameters.push({ name: "iIdEstadoAprobacion", value: Movimiento.iIdEstadoAprobacion })
+    parameters.push({ name: "iIdEstado", value: Movimiento.iIdEstado })
+    parameters.push({ name: "vcUsuarioCreacionApp", value: Movimiento.vcUsuarioCreacionApp })
+    parameters.push({ name: "vcUsuarioModificacionOT", value: Movimiento.vcUsuarioModificacionOT })
+    parameters.push({ name: "DETALLE_XML", value: js2xmlparser.parse("MovimientoDetalle", Movimiento.DETALLE_XML) })
+    helper.transaction(sql, "rhMovimiento.SP_INS_Movimiento", parameters, ok, error)
+*/
+console.log(parameters)
+    helper.transaction(sql, "rhMovimiento.SP_TRS_INS_MOVIMIENTO", parameters, ok, error)
+   
+}
+
+function confirmar(Movimiento, ok, error) {
+    var parameters = []
+    parameters.push({ name: "iIdMovimiento", value: Movimiento.iIdMovimiento })
+    helper.transaction(sql, "rhMovimiento.SP_CONFIRMAR_MOVIMIENTO", parameters, ok, error)
+   
 }
 
 function modificar(Movimiento, ok, error) {
@@ -79,3 +101,4 @@ exports.buscarById = buscarById
 exports.insertar = insertar
 exports.modificar = modificar
 exports.eliminar = eliminar
+exports.confirmar = confirmar
