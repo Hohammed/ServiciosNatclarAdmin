@@ -19,8 +19,17 @@ function listar(ok, error) {
     helper.query(sql, "rhMovimiento.SP_OBT_MOVIMIENTO", [], ok, error)
 }
 
-function buscarById(parametros, ok, error) {
+/*function buscarById(parametros, ok, error) {
     helper.query(sql, "rhMovimiento.SP_OBT_MOVIMIENTO", parametros, ok, error)
+}*/
+
+function buscarById(iIdMovimiento, iIdRequerimiento, iItemRQ, ok, error) {
+    var parameters = []
+   parameters.push({ name: "iIdMovimiento", value: iIdMovimiento })
+   parameters.push({ name: "iIdRequerimiento", value: iIdRequerimiento })
+   parameters.push({ name: "iItemRQ", value: iItemRQ })
+    
+    helper.query(sql, "rhMovimiento.SP_OBT_MOVIMIENTO", parameters, ok, error)
 }
 
 function buscarByFiltro(parametros, ok, error) {
@@ -34,10 +43,12 @@ function insertar(Movimiento, ok, error) {
     parameters.push({ name: "iIdRequerimiento", value: Movimiento.iIdRequerimiento })
     parameters.push({ name: "iItemRQ", value: Movimiento.iItemRQ })
     parameters.push({ name: "dAprobacion", value: Movimiento.dAprobacion })
-     parameters.push({ name: "vcIdSedeO", value: Movimiento.vcIdSedeO })
+    parameters.push({ name: "vcIdSedeO", value: Movimiento.vcIdSedeO })
     parameters.push({ name: "vcIdSede", value: Movimiento.vcIdSede })
     parameters.push({ name: "iIdSistemaTrabajo", value: Movimiento.iIdSistemaTrabajo })
+    parameters.push({ name: "iIdSistemaTrabajoO", value: Movimiento.iIdSistemaTrabajoO })
     parameters.push({ name: "iIdPuesto", value: Movimiento.iIdPuesto })
+    parameters.push({ name: "iIdPuestoO", value: Movimiento.iIdPuestoO })
     parameters.push({ name: "vcIdAreaNatclarO", value: Movimiento.vcIdAreaNatclarO })
     parameters.push({ name: "vcIdAreaNatclar", value: Movimiento.vcIdAreaNatclar })
     parameters.push({ name: "vbSueldo", value: Movimiento.vbSueldo })

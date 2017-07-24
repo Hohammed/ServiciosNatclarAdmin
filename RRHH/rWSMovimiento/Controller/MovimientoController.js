@@ -24,7 +24,7 @@ listarTodo = function (req, res) {
 }
 
 //GET - Buscar por ID
-buscarById = function (req, res) {
+/*buscarById = function (req, res) {
     function ok(object) {
         res.send(object)
     }
@@ -38,6 +38,20 @@ buscarById = function (req, res) {
     parametros.push(iIdMovimiento);
     //console.log(req.params.id)
     MovimientoDao.buscarById(parametros, ok, error)
+}*/
+
+buscarById = function (req, res) {
+    function ok(object) {
+        res.send(object)
+    }
+    function error(error) {
+        console.log(error)
+    }
+    console.log(req.query.iIdMovimiento)
+    console.log(req.query.iIdRequerimiento)
+    console.log(req.query.iItemRQ)
+    MovimientoDao.buscarById(req.query.iIdMovimiento, req.query.iIdRequerimiento, req.query.iItemRQ, ok, error)
+   
 }
 
 //GET - Buscar por Filtro
@@ -75,7 +89,9 @@ insertarRegistro = function (req, res) {
     Movimiento.vcIdSedeO = req.body.vcIdSedeO
     Movimiento.vcIdSede = req.body.vcIdSede
     Movimiento.iIdSistemaTrabajo = req.body.iIdSistemaTrabajo
+    Movimiento.iIdSistemaTrabajoO = req.body.iIdSistemaTrabajoO
     Movimiento.iIdPuesto = req.body.iIdPuesto
+    Movimiento.iIdPuestoO = req.body.iIdPuestoO
     Movimiento.vcIdAreaNatclarO = req.body.vcIdAreaNatclarO
     Movimiento.vcIdAreaNatclar = req.body.vcIdAreaNatclar
     Movimiento.vbSueldo = req.body.vbSueldo

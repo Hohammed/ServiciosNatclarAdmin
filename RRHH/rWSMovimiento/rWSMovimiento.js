@@ -32,14 +32,15 @@ app.use(router)
 var api = express.Router()
 
 api.route('/Movimiento')
-    .get(MovimientoController.listarTodo)
+    //.get(MovimientoController.listarTodo)
     .post(MovimientoController.insertarRegistro)
+    .get(MovimientoController.buscarById)
 
 api.route('/Movimiento/filtro')
     .get(MovimientoController.buscarByFiltro)
 
 api.route('/Movimiento/:id')
-    .get(MovimientoController.buscarById)
+    //.get(MovimientoController.buscarById)
     //.put(MovimientoController.modificarRegistro)
     .put(MovimientoController.confirmarRegistro)
     .delete(MovimientoController.eliminarRegistro)

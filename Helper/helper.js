@@ -26,7 +26,7 @@ function query(sql, procedure, parameters, callBackOk, callBackError) {
 function transaction(sql, procedure, parameters, callBackOk, callBackError) {
     sql.connect(config).then(function () {
         var request = new sql.Request()
-        console.log(parameters)
+        //console.log(parameters)
         parameters.forEach(function (item) {
             request.input(item.name, item.value)
         })

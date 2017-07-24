@@ -1,0 +1,13 @@
+{
+  "name": "rwsasistencia",
+  "version": "1.0.0",
+  "description": "Servicio que trae el reporte de asistenciasegun filtros definidos",
+  "main": "rWSAsistencia.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Enrique Leiva Diaz",
+  "license": "ISC"
+}

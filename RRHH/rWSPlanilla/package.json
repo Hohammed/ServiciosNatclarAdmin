@@ -1,0 +1,15 @@
+{
+  "name": "rwsplanilla",
+  "version": "1.0.0",
+  "description": "Servicio que trae el planillon",
+  "main": "rWSPlanilla.js",
+  "dependencies": {
+    "deprecate": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Enrique Leiva Diaz",
+  "license": "ISC"
+}

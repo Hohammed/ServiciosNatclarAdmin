@@ -1,0 +1,13 @@
+{
+  "name": "swmovimientoauto",
+  "version": "1.0.0",
+  "description": "servicio de windows de mov auto",
+  "main": "swMovimientoAuto",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Enrique Leiva Diaz",
+  "license": "ISC"
+}
