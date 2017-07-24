@@ -21,3 +21,15 @@ exports.UnidadOrganizativa = {
     nvCorreo: undefined,
     nvTelefono: undefined,
 }
+
+exports.EmpresaEntidadFinanciera={
+vcIdEmpresaEntidadFinanciera: undefined,
+vcRUCEmpresa: undefined,
+vcIdEntidadFinanciera: undefined,
+vcCuentaBancaria: undefined,
+vcCuentaInterbancaria: undefined,
+vcIdMoneda: undefined,
+vcDescripcion: undefined,
+iIdEstado: undefined,
+}
+

@@ -11,7 +11,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 8080
+var puerto = 1402
 
 /*controller*/
 var empresaController = require('./Controller/EmpresaController')
@@ -20,7 +20,7 @@ var empresaController = require('./Controller/EmpresaController')
 var app = express()
 var router = express.Router()
 router.get('/', function (req, res) {
-    res.send("Servicios Rest - Unidad Organizativa")
+    res.send("Servicios Rest - Empresa")
 })
 
 app.use(cors())
@@ -42,6 +42,10 @@ api.route('/empresa/:id')
 
 api.route('/empresa/filtrarByUnidadOrganizativa')
     .post(empresaController.filtrarByUnidadOrganizativa)
+
+/*URL y verbos para EmpresaEntidadFinanciera*/
+api.route('/empresaentidafinanciera/:vcRucEmpresa/:vcIdEntidadFinanciera?')
+    .get(empresaController.listarcuentaempresa)    
 
 app.use('/Service', api)
 

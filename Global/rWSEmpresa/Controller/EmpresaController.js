@@ -96,9 +96,33 @@ eliminarRegistro = function (req, res) {/*
     empresaDAO.eliminar(req.params.id, ok, error)*/
 }
 
+Lista_CuentaBancaria_Empresa = function (request,response)
+{
+    console.log("Empresacontroller: " + request.params.vcRucEmpresa)
+    console.log("Empresacontroller: " + request.params.vcIdEntidadFinanciera)
+    
+    var EmpresaEntidadFinanciera= model.EmpresaEntidadFinanciera
+    EmpresaEntidadFinanciera.vcRUCEmpresa= request.params.vcRucEmpresa
+    EmpresaEntidadFinanciera.vcIdEntidadFinanciera= request.params.vcIdEntidadFinanciera
+
+    console.log("Empresacontroller: " + JSON.stringify(EmpresaEntidadFinanciera))
+    
+    function ok(lista) {
+        response.status(200).send(lista)
+    }
+    function error(error) {
+        console.log(error)
+        response.status(201).send(error)
+    }
+    empresaDAO.listacuentabancaria(EmpresaEntidadFinanciera, ok, error)
+
+}
+
+
 exports.listarTodo = listarTodo
 exports.buscarById = buscarById
 exports.filtrarByUnidadOrganizativa = filtrarByUnidadOrganizativa
 exports.insertarRegistro = insertarRegistro
 exports.modificarRegistro = modificarRegistro
 exports.eliminarRegistro = eliminarRegistro
+exports.listarcuentaempresa=Lista_CuentaBancaria_Empresa
