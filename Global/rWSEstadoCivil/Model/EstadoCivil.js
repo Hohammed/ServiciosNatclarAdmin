@@ -1,4 +1,4 @@
-/*model */
+/*model*/
 exports.EstadoCivil = {
     cIdEstadoCivil: undefined,
     vcDenominacion: undefined,

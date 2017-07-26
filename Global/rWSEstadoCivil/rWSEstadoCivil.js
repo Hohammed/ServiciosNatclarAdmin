@@ -45,18 +45,3 @@ app.use('/service', api)
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
-
-/*
-var apiec = express.Router()
-
-apiec.route('/estadocivil')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
-
-apiec.route('/estadocivil/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
-
-exports.api = apiec
-*/
