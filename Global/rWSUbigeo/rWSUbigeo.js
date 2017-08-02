@@ -1,20 +1,13 @@
-//npm init
-//npm install express
-//npm install  body-parser
-//npm install method-override
-//npm install cors
-//npm install mssql
-
 /*imports*/
 var express = require("express")
 var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 3000
+var puerto = 3003
 
 /*controller*/
-var estadoCivilController = require('./Controller/EstadoCivilController')
+var ubigeoController = require('./Controller/UbigeoController')
 
 /*service*/
 var app = express()
@@ -32,38 +25,17 @@ app.use(router)
 var api = express.Router()
 
 api.route('/ubigeo')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
+    .get(ubigeoController.listarTodo)
+    .post(ubigeoController.buscarBySede)
 
-api.route('/ubigeo/Departamento')
-    .post(estadoCivilController.listarDepartamento)
-api.route('/ubigeo/ProvinciaByDepartamento')
-    .post(estadoCivilController.listarProvinciaByDepartamento)
-api.route('/ubigeo/DistritoByProvincia')
-    .post(estadoCivilController.listarDistritoByProvincia)
+api.route('/ubigeo/departamento')
+    .get(ubigeoController.listarDepartamento)
 
 api.route('/ubigeo/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
+    .get(ubigeoController.buscarById)
 
-app.use('/service', api)
+app.use('/Service', api)
 
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
-
-/*
-var apiec = express.Router()
-
-apiec.route('/estadocivil')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
-
-apiec.route('/estadocivil/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
-
-exports.api = apiec
-*/

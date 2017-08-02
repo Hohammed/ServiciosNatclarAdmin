@@ -9,31 +9,32 @@ var model = require('./../Model/Requerimiento')
 //GET - Listar
 listarTodo = function (req, res) {
     function ok(lista) {
+        console.log(lista)
         res.status(200).send(lista)
     }
     function error(error) {
+        console.log(error)
         res.status(201).send(error)
     }
-    if(req.body.dsp==undefined){
-        requerimientoDAO.listar(ok, error)
-    }
-    if(req.body.dsp!=undefined){
-        requerimientoDAO.mostrar(ok, error)
-    }
+    requerimientoDAO.listar(req.query.responsable, req.query.SedeOrigen, req.query.SedeDestino, req.query.fechainicio, req.query.fechafin, req.query.iIdEstadoAprobacion, ok, error)
 }
 //GET - Buscar por ID
-buscarById = function (req, res) {/*
+buscarById = function (req, res) {
     function ok(object) {
+        console.log(object)
         res.send(object)
     }
     function error(error) {
         console.log(error)
+        res.send(error)
     }
-    requerimientoDAO.buscar(req.params.id, ok, error)*/
+    requerimientoDAO.buscar(req.params.id, ok, error)
 }
 //POST - Insertar nuevo registro
 insertarRegistro = function (req, res) {
     var requerimiento = model.Requerimiento
+    requerimiento.idGerencia = req.body.idGerencia,
+    requerimiento.iIdMofPuesto = req.body.iIdMofPuesto,
     requerimiento.iIdRequerimiento = req.body.iIdRequerimiento,
     requerimiento.vcNumeroDocumento = req.body.vcNumeroDocumento,
     requerimiento.vcIdSedeOrigen = req.body.vcIdSedeOrigen,
@@ -41,9 +42,9 @@ insertarRegistro = function (req, res) {
     requerimiento.vcIdSede = req.body.vcIdSede,
     requerimiento.vcRucEmpresa = req.body.vcRucEmpresa,
     requerimiento.vcCodigoUbigeo = req.body.vcCodigoUbigeo,
-    requerimiento.dFecha = req.body.dFecha,
-    requerimiento.nvObservacion = req.body.nvObservacion,
+    requerimiento.dtFecha = req.body.dtFecha,
     requerimiento.iIdEstadoAprobacion = req.body.iIdEstadoAprobacion,
+    requerimiento.iIdEstadoConfirmacion = req.body.iIdEstadoConfirmacion,
     requerimiento.iIdEstado = req.body.iIdEstado,
     requerimiento.vcUsuarioCreacionApp = req.body.vcUsuarioCreacionApp,
     requerimiento.vcUsuarioModificacionOT = req.body.vcUsuarioModificacionOT,
@@ -62,22 +63,7 @@ insertarRegistro = function (req, res) {
 }
 
 //PUT - Actualizar registro
-modificarRegistro = function (req, res) {/*
-    var requerimiento = model.Requerimiento
-    requerimiento.cIdEstadoCivil = req.body.cIdEstadoCivil
-    requerimiento.vcDenominacion = req.body.vcDenominacion
-
-    function ok(rowsAffected) {
-        if (rowsAffected == 0) {
-            res.send("No se llevo a cabo la transacción")
-        } else {
-            res.send('Registro modificado: ID - ' + requerimiento.cIdEstadoCivil)
-        }
-    }
-    function error(error) {
-        res.status(201).send(error)
-    }
-    requerimientoDAO.modificar(requerimiento, ok, error)*/
+modificarRegistro = function (req, res) {
 }
 
 exports.listarTodo = listarTodo
