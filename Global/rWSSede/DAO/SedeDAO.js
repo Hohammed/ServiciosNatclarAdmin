@@ -12,54 +12,23 @@ function listar(ok, error) {
     helper.query(sql, "MAESTRO.SP_SEL_DSP_SEDE_BY_EMPRESA", [], ok, error)
 }
 
-function filtrar(vcRucEmpresa, ok, error) {
-    console.log("DAO: " + vcRucEmpresa)
+function filtrar(vcRucEmpresa, iIdUnidadOrganizativa, ok, error) {
     var parameters = []
-    var parameter = {name: "vcRucEmpresa", value: vcRucEmpresa}
-    parameters.push(parameter)
+    parameters.push( { name: "vcRucEmpresa", value: vcRucEmpresa } )
+    parameters.push( { name: "iIdUnidadOrganizativa", value: iIdUnidadOrganizativa } )
     helper.query(sql, "MAESTRO.SP_SEL_DSP_SEDE_BY_EMPRESA", parameters, ok, error)
 }
 
-function buscar(id, ok, error) {/*
-    var parameters = []
-    var parameter = { name: "vcRucEmpresa",
-    //type: sql.VarChar,
-    value: id }
-    parameters.push(parameter);
-    helper.query(sql, "", parameters, ok, error)*/
+function buscar(id, ok, error) {
 }
 
-function insertar(sede, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "vcRucEmpresa",
-        //type: sql.VarChar,
-        value: sede.vcIdSede
-    }
-    parameters.push(parameter1);
-    helper.transaction(sql, "", parameters, ok, error)*/
+function insertar(sede, ok, error) {
 }
 
-function modificar(sede, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "vcIdSede",
-        //type: sql.VarChar,
-        value: sede.vcIdSede
-    }
-    parameters.push(parameter1);
-    helper.transaction(sql, "", parameters, ok, error)*/
+function modificar(sede, ok, error) {
 }
 
-function eliminar(id, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "vcIdSede",
-        //type: sql.VarChar,
-        value: id
-    }
-    parameters.push(parameter1);
-    helper.transaction(sql, "", parameters, ok, error)*/
+function eliminar(id, ok, error) {
 }
 
 exports.mostrar = mostrar

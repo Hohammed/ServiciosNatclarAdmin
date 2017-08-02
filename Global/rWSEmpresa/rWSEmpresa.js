@@ -1,9 +1,3 @@
-//npm init
-//npm install express
-//npm install  body-parser
-//npm install method-override
-//npm install cors
-//npm install mssql
 
 /*imports*/
 var express = require("express")
@@ -11,7 +5,11 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
+<<<<<<< HEAD
+var puerto = 3001
+=======
 var puerto = 1402
+>>>>>>> a8b8a9fc8d634c37345f5e8e3dfaaa37bffa284b
 
 /*controller*/
 var empresaController = require('./Controller/EmpresaController')
@@ -52,18 +50,3 @@ app.use('/Service', api)
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
-
-/*
-var apiec = express.Router()
-
-apiec.route('/estadocivil')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
-
-apiec.route('/estadocivil/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
-
-exports.api = apiec
-*/

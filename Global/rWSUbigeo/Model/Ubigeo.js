@@ -14,5 +14,5 @@ exports.Ubigeo = {
     vcUsuarioModificacionApp: undefined,
     vcUsuarioModificacionDB: undefined,
     vcUsuarioModificacionSP: undefined,
-    vcUsuarioModificacionOT: undefined,
+    vcUsuarioModificacionOT: undefined
 }

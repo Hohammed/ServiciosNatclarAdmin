@@ -2,7 +2,7 @@
   "name": "rwsubigeo",
   "version": "1.0.0",
   "description": "",
-  "main": "rwsUbigeo.js",
+  "main": "rWSUbigeo.js",
   "author": "CristopherVargasMelgar",
   "dependencies": {
     "express": "^4.15.3",

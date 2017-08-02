@@ -4,98 +4,38 @@ var sql = require('mssql')
 var helper = require('./../../../Helper/helper')
 
 /*DAO*/
-function listarDepartemento(ok, error) {
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", [], ok, error)
+function listarDepartamento(ok, error) {
+    helper.query(sql, "Maestro.SP_SEL_DSP_DEPARTAMENTO", [], ok, error)
 }
 function listarProvinciaByDepartamento(vcCodigoUbigeoPadre, ok, error) {
     var parameters = []
-    var parameter = { name: "vcCodigoUbigeoPadre", value: vcCodigoUbigeoPadre }
-    parameters.push(parameter);
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", parameters, ok, error)
+    parameters.push({ name: "vcCodigoUbigeoPadre", value: vcCodigoUbigeoPadre })
+    helper.query(sql, "Maestro.SP_SEL_DSP_PROVINCIA_BY_DEPARTAMENTO", parameters, ok, error)
 }
 function listarDistritoByProvincia(vcCodigoUbigeoPadre, ok, error) {
     var parameters = []
-    var parameter = { name: "vcCodigoUbigeoPadre", value: vcCodigoUbigeoPadre }
-    parameters.push(parameter);
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", parameters, ok, error)
+    parameters.push({ name: "vcCodigoUbigeoPadre", value: vcCodigoUbigeoPadre })
+    helper.query(sql, "Maestro.SP_SEL_DSP_DISTRITO_BY_PROVINCIA", parameters, ok, error)
 }
-function mostrar(ok, error) {/*
-    var parameters = []
-    var parameter = {
-        name: "dsp",
-        //type: sql.VarChar,
-        value: 1
-    }
-    parameters.push(parameter);
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", parameters, ok, error)*/
+function mostrar(ok, error) {
 }
 
 function listar(ok, error) {
-    /*helper.query(sql, "MAESTRO.sp_sel_estado_civil", [], ok, error)*/
 }
 
-function buscar(id, ok, error) {/*
+function buscarBySede(vcIdSede, ok, error) {
     var parameters = []
-    var parameter = {
-        name: "cIdEstadoCivil",
-        //type: sql.VarChar,
-        value: id
-    }
-    parameters.push(parameter);
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", parameters, ok, error)*/
+    parameters.push({ name: "vcIdSede", value: vcIdSede });
+    helper.query(sql, "Maestro.SP_SEL_UBIGEO_BY_SEDE", parameters, ok, error)
 }
 
-function insertar(estadoCivil, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "cIdEstadoCivil",
-        //type: sql.VarChar,
-        value: estadoCivil.cIdEstadoCivil
-    }
-    var parameter2 = {
-        name: "vcDenominacion",
-        //type: sql.VarChar,
-        value: estadoCivil.vcDenominacion
-    }
-    parameters.push(parameter1);
-    parameters.push(parameter2);
-    helper.transaction(sql, "MAESTRO.sp_ins_estado_civil", parameters, ok, error)*/
+function buscar(id, ok, error) {
 }
 
-function modificar(estadoCivil, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "cIdEstadoCivil",
-        //type: sql.VarChar,
-        value: estadoCivil.cIdEstadoCivil
-    }
-    var parameter2 = {
-        name: "vcDenominacion",
-        //type: sql.VarChar,
-        value: estadoCivil.vcDenominacion
-    }
-    parameters.push(parameter1);
-    parameters.push(parameter2);
-    helper.transaction(sql, "MAESTRO.sp_upd_estado_civil", parameters, ok, error)*/
-}
-
-function eliminar(id, ok, error) {/*
-    var parameters = []
-    var parameter1 = {
-        name: "cIdEstadoCivil",
-        //type: sql.VarChar,
-        value: id
-    }
-    parameters.push(parameter1);
-    helper.transaction(sql, "MAESTRO.sp_del_estado_civil", parameters, ok, error)*/
-}
-
-exports.listarDepartemento = listarDepartemento
+exports.listarDepartamento = listarDepartamento
 exports.listarProvinciaByDepartamento = listarProvinciaByDepartamento
 exports.listarDistritoByProvincia = listarDistritoByProvincia
 exports.mostrar = mostrar
 exports.listar = listar
+exports.buscarBySede = buscarBySede
 exports.buscar = buscar
-exports.insertar = insertar
-exports.modificar = modificar
-exports.eliminar = eliminar

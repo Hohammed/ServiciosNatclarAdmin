@@ -11,7 +11,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 8081
+var puerto = 3002
 
 /*controller*/
 var empresaController = require('./Controller/SedeController')
@@ -48,18 +48,3 @@ app.use('/Service', api)
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
-
-/*
-var apiec = express.Router()
-
-apiec.route('/estadocivil')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
-
-apiec.route('/estadocivil/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
-
-exports.api = apiec
-*/
