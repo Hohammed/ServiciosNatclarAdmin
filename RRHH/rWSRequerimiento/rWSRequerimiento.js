@@ -37,7 +37,9 @@ api.route('/requerimiento')
 
 api.route('/requerimiento/:id')
     .get(requerimientoController.buscarById)
-    .put(requerimientoController.modificarRegistro)
+
+api.route('/correosPorNotificar/:id')
+    .get(requerimientoController.correosPorNotificar)
 
 app.use('/service', api)
 
