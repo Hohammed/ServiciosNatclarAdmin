@@ -5,11 +5,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-<<<<<<< HEAD
 var puerto = 3001
-=======
-var puerto = 1402
->>>>>>> a8b8a9fc8d634c37345f5e8e3dfaaa37bffa284b
 
 /*controller*/
 var empresaController = require('./Controller/EmpresaController')

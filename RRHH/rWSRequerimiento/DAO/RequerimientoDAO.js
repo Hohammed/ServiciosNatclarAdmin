@@ -42,14 +42,16 @@ function insertar(requerimiento, ok, error) {
     parameters.push({ name: "vcUsuarioModificacionOT", value: requerimiento.vcUsuarioModificacionOT })
     parameters.push({ name: "iIdEstado", value: requerimiento.iIdEstado })
     parameters.push({ name: "DETALLE_XML", value: js2xmlparser.parse("RequerimientoDetalle", requerimiento.DETALLE_XML) })
-    console.log(requerimiento)
     helper.transaction(sql, "rhRequerimiento.SP_INS_REQUERIMIENTO", parameters, ok, error)
 }
 
-function modificar(estadoCivil, ok, error) {
+function correosPorNotificar(requerimiento, ok, error) {
+    var parameters = []
+    parameters.push({ name: "iIdRequerimiento", value: requerimiento.iIdRequerimiento })
+    helper.query(sql, "rhRequerimiento.SP_CORREOS_POR_NOTIFICAR", parameters, ok, error)
 }
 
 exports.listar = listar
 exports.buscar = buscar
 exports.insertar = insertar
-exports.modificar = modificar
+exports.correosPorNotificar = correosPorNotificar

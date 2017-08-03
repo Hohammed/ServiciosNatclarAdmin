@@ -1,0 +1,15 @@
+{
+  "name": "rwscorreo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rwsCorreo.js",
+  "author": "CristopherVargasMelgar",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mssql": "^4.0.4",
+    "body-parser": "^1.17.2",
+    "method-override": "^2.3.9",
+    "cors": "^2.8.3",
+    "nodemailer": "^4.0.1"
+  }
+}
