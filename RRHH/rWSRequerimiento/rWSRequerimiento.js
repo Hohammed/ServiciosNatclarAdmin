@@ -14,13 +14,13 @@ var cors = require('cors')
 var puerto = 8082
 
 /*controller*/
-var requerimientoController = require('./Controller/RequerimientoController')
+var requerimientoController = require('./Controller/RegistroTrabajadorController')
 
 /*service*/
 var app = express()
 var router = express.Router()
 router.get('/', function (req, res) {
-    res.send("Servicios Rest - Requerimeinto Personal")
+    res.send("Servicios Rest - Registro de  Personal")
 })
 
 app.use(cors())
@@ -32,30 +32,15 @@ app.use(router)
 var api = express.Router()
 
 api.route('/requerimiento')
-    .get(requerimientoController.listarTodo)
-    .post(requerimientoController.insertarRegistro)
+    .get(RegistroTrabajadorController.listarTodo)
+    .post(RegistroTrabajadorController.insertarRegistro)
 
 api.route('/requerimiento/:id')
-    .get(requerimientoController.buscarById)
-    .put(requerimientoController.modificarRegistro)
+    .get(RegistroTrabajadorController.buscarById)
+    .put(RegistroTrabajadorController.modificarRegistro)
 
 app.use('/service', api)
 
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
 })
-
-/*
-var apiec = express.Router()
-
-apiec.route('/estadocivil')
-    .get(estadoCivilController.listarTodo)
-    .post(estadoCivilController.insertarRegistro)
-
-apiec.route('/estadocivil/:id')
-    .get(estadoCivilController.buscarById)
-    .put(estadoCivilController.modificarRegistro)
-    .delete(estadoCivilController.eliminarRegistro)
-
-exports.api = apiec
-*/
