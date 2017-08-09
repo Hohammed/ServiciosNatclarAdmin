@@ -11,7 +11,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 8082
+var puerto = 3005
 
 /*controller*/
 var requerimientoController = require('./Controller/RegistroTrabajadorController')
@@ -36,11 +36,22 @@ api.route('/requerimiento')
     .post(RegistroTrabajadorController.insertarRegistro)
 
 api.route('/requerimiento/:id')
+<<<<<<< HEAD
     .get(RegistroTrabajadorController.buscarById)
     .put(RegistroTrabajadorController.modificarRegistro)
+=======
+    .get(requerimientoController.buscarById)
+
+api.route('/correosPorNotificar/:id')
+    .get(requerimientoController.correosPorNotificar)
+>>>>>>> ebf55c5a907bc29dabc4ab5e15aaae0690880c4d
 
 app.use('/service', api)
 
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> ebf55c5a907bc29dabc4ab5e15aaae0690880c4d
