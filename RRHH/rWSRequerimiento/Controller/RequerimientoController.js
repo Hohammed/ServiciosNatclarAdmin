@@ -45,6 +45,8 @@ insertarRegistro = function (req, res) {
     requerimiento.iIdEstadoAprobacion = req.body.iIdEstadoAprobacion
     requerimiento.iIdEstadoConfirmacion = req.body.iIdEstadoConfirmacion
     requerimiento.iIdEstado = req.body.iIdEstado
+    //Se agregga el campo de Observacion
+    requerimiento.nvObservacion = req.body.nvObservacion
     requerimiento.vcUsuarioCreacionApp = req.body.vcUsuarioCreacionApp
     requerimiento.vcUsuarioModificacionOT = req.body.vcUsuarioModificacionOT
     requerimiento.DETALLE_XML = req.body.DETALLE_XML

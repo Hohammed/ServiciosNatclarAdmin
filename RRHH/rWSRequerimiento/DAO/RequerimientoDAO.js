@@ -38,6 +38,7 @@ function insertar(requerimiento, ok, error) {
     parameters.push({ name: "iIdEstadoAprobacion", value: requerimiento.iIdEstadoAprobacion })
     parameters.push({ name: "iIdEstadoConfirmacion", value: requerimiento.iIdEstadoConfirmacion })
     parameters.push({ name: "iIdEstado", value: requerimiento.iIdEstado })
+    parameters.push({ name: "nvObservacion", value: requerimiento.nvObservacion })
     parameters.push({ name: "vcUsuarioCreacionApp", value: requerimiento.vcUsuarioCreacionApp })
     parameters.push({ name: "vcUsuarioModificacionOT", value: requerimiento.vcUsuarioModificacionOT })
     parameters.push({ name: "iIdEstado", value: requerimiento.iIdEstado })
