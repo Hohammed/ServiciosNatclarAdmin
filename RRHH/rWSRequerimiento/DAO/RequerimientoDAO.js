@@ -25,6 +25,7 @@ function buscar(iIdRequerimiento, ok, error) {
 function insertar(requerimiento, ok, error) {
     //var xml = requerimiento.DETALLE_XML
     var parameters = []
+    
     parameters.push({ name: "idGerencia", value: requerimiento.idGerencia })
     parameters.push({ name: "iIdMofPuesto", value: requerimiento.iIdMofPuesto })
     parameters.push({ name: "iIdRequerimiento", value: requerimiento.iIdRequerimiento })
@@ -41,8 +42,9 @@ function insertar(requerimiento, ok, error) {
     parameters.push({ name: "vcUsuarioCreacionApp", value: requerimiento.vcUsuarioCreacionApp })
     parameters.push({ name: "vcUsuarioModificacionOT", value: requerimiento.vcUsuarioModificacionOT })
     parameters.push({ name: "iIdEstado", value: requerimiento.iIdEstado })
-    parameters.push({ name: "DETALLE_XML", value: js2xmlparser.parse("RequerimientoDetalle", requerimiento.DETALLE_XML) })
-    helper.transaction(sql, "rhRequerimiento.SP_INS_REQUERIMIENTO", parameters, ok, error)
+    parameters.push({ name: "fileAdjunto", value: requerimiento.fileAdjunto })
+    parameters.push({ name: "DETALLE_XML", value: js2xmlparser.parse("RequerimientoDetalle", requerimiento.DETALLE_XML) })    
+    helper.transaction(sql, "rhRequerimiento.SP_INS_REQUERIMIENTO_DEVUELVE_DATO", parameters, ok, error)
 }
 
 function correosPorNotificar(requerimiento, ok, error) {

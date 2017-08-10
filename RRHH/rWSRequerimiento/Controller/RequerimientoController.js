@@ -32,6 +32,10 @@ buscarById = function (req, res) {
 //POST - Insertar nuevo registro
 insertarRegistro = function (req, res) {
     var requerimiento = model.Requerimiento
+
+    console.log(req.body.vcUsuarioCreacionApp);
+    console.log(req.body.fileAdjunto);
+
     requerimiento.idGerencia = req.body.idGerencia
     requerimiento.iIdMofPuesto = req.body.iIdMofPuesto
     requerimiento.iIdRequerimiento = req.body.iIdRequerimiento
@@ -47,10 +51,12 @@ insertarRegistro = function (req, res) {
     requerimiento.iIdEstado = req.body.iIdEstado
     requerimiento.vcUsuarioCreacionApp = req.body.vcUsuarioCreacionApp
     requerimiento.vcUsuarioModificacionOT = req.body.vcUsuarioModificacionOT
+    requerimiento.fileAdjunto = req.body.fileAdjunto
     requerimiento.DETALLE_XML = req.body.DETALLE_XML
+    
     function ok(rowsAffected) {
         if (rowsAffected == 0) {
-            res.send("No se llevo a cabo la transacción")
+            res.send("No se llevó a cabo la transacción")
         } else {
             res.send('Registro guradado: ID - ' + requerimiento.iIdRequerimiento)
         }

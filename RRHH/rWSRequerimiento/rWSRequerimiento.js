@@ -14,13 +14,13 @@ var cors = require('cors')
 var puerto = 3005
 
 /*controller*/
-var requerimientoController = require('./Controller/RegistroTrabajadorController')
+var requerimientoController = require('./Controller/RequerimientoController')
 
 /*service*/
 var app = express()
 var router = express.Router()
 router.get('/', function (req, res) {
-    res.send("Servicios Rest - Registro de  Personal")
+    res.send("Servicios Rest - Requerimiento Personal")
 })
 
 app.use(cors())
@@ -32,26 +32,17 @@ app.use(router)
 var api = express.Router()
 
 api.route('/requerimiento')
-    .get(RegistroTrabajadorController.listarTodo)
-    .post(RegistroTrabajadorController.insertarRegistro)
+    .get(requerimientoController.listarTodo)
+    .post(requerimientoController.insertarRegistro)
 
 api.route('/requerimiento/:id')
-<<<<<<< HEAD
-    .get(RegistroTrabajadorController.buscarById)
-    .put(RegistroTrabajadorController.modificarRegistro)
-=======
     .get(requerimientoController.buscarById)
 
 api.route('/correosPorNotificar/:id')
     .get(requerimientoController.correosPorNotificar)
->>>>>>> ebf55c5a907bc29dabc4ab5e15aaae0690880c4d
 
 app.use('/service', api)
 
 app.listen(puerto, function () {
     console.log('Servidor escuchando en puerto ' + puerto)
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> ebf55c5a907bc29dabc4ab5e15aaae0690880c4d
