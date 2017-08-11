@@ -1,0 +1,4 @@
+/*model */
+exports.Trabajador = {
+   
+}

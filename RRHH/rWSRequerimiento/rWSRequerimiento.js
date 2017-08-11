@@ -20,7 +20,7 @@ var requerimientoController = require('./Controller/RequerimientoController')
 var app = express()
 var router = express.Router()
 router.get('/', function (req, res) {
-    res.send("Servicios Rest - Requerimeinto Personal")
+    res.send("Servicios Rest - Requerimiento Personal")
 })
 
 app.use(cors())
