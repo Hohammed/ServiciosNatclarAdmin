@@ -31,8 +31,9 @@ function transaction(sql, procedure, parameters, callBackOk, callBackError) {
             request.input(item.name, item.value)
         })
         request.execute(procedure).then(function (recordSet) {
-            callBackOk(recordSet.rowsAffected)
             sql.close()
+            callBackOk(recordSet.rowsAffected)
+            
         }).catch(function (err) {
             callBackError(err)
             sql.close()

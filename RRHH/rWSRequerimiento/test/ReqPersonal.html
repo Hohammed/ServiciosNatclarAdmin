@@ -1,0 +1,592 @@
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+		
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Arial"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em; } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em; } 
+		comment { display:none; } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="4"></colgroup>
+	<colgroup width="173"></colgroup>
+	<colgroup width="43"></colgroup>
+	<colgroup width="70"></colgroup>
+	<colgroup span="4" width="44"></colgroup>
+	<colgroup width="71"></colgroup>
+	<colgroup width="50"></colgroup>
+	<colgroup width="70"></colgroup>
+	<colgroup width="44"></colgroup>
+	<colgroup width="47"></colgroup>
+	<tr>
+		<td align="right" sdval="0" sdnum="1033;"></td>
+		<td><img src="" width=85 height=50 hspace=44 vspace=5></td>
+		<td>FORMULARIO<br>REQUERIMIENTO DE PERSONAL</b></td>
+		<td><b>Código:</b></td>
+		<td>FO-RRH-29</td>
+		</tr>
+	<tr>
+		<td>Versión:</b></td>
+		<td>05</i></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=2><b>Unidad:</b></td>
+		<td colspan=2>Corporativo</td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td>Fecha</td>
+		<td colspan=11><b><br></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><b>DATOS DE LA SEDE O UNIDAD SOLICITANTE</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td> Sede o Unidad</td>
+		<td colspan=5><br></td>
+		<td colspan=2>E-mail</td>
+		<td colspan=4><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td> Área</td>
+		<td colspan=5><br></td>
+		<td colspan=2>Telef / Anexo</td>
+		<td colspan=4><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td> Solicitante</td>
+		<td colspan=5 value={{info.vcSolicitante}}><br>{{info.vcSolicitante}}</td>
+		<td colspan=2>Celular</td>
+		<td colspan=4 value={{info.vcNumeroDocumentoSolicitante}}><br>{{info.vcNumeroDocumentoSolicitante}}</td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><b>DATOS DEL PUESTO A CUBRIR</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b>Nombre del Puesto</b></td>
+		<td colspan=11><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b>Cantidad </b></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=5><b>Motivo (Marcar)</b></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=5><b>Modalidad de contratación </b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4>Renuncia (Especificar el nombre de la personal en retiro)</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>A plazo fijo</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4>Por vacaciones/licencia</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Medio Tiempo *</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td height="16"><br></td>
+		<td colspan=4>Puesto nuevo</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Tiempo parcial **</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4>Por movimiento de personal</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Pos suplencia</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4>Otros (Especificar)</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Intermitente</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=5 rowspan=2><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Prácticas</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td colspan=4>Por locación de servicio</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><b>Horario de trabajo</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=5 rowspan=3>Días</td>
+		<td>L</td>
+		<td>M</td>
+		<td>Mi</td>
+		<td>J</td>
+		<td>V</td>
+		<td>S</td>
+		<td>D</td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td>Turno Mañana</td>
+		<td colspan=4><br></td>
+		<td colspan=7>Especificar Horario</td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td>Turno Tarde</td>
+		<td colspan=4><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td>Turno Noche</td>
+		<td colspan=4><br></td>
+		<td colspan=7 rowspan=3><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td>Rotativo</td>
+		<td colspan=4><br></td>
+		</tr>
+	<tr>
+		<td height="34"><br></td>
+		<td>Indicar Sistema</td>
+		<td colspan=4><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b>UBICACIÓN DEL PUESTO</b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td>País</td>
+		<td colspan=3>Peru</td>
+		<td colspan=3>Provincia</td>
+		<td colspan=5><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td>Departamento</td>
+		<td colspan=3>Lima</td>
+		<td colspan=3>Distrito</td>
+		<td colspan=5><br></td>
+		</tr>
+	<tr>
+		<td height="23"><br></td>
+		<td>Lugar de ejecución</td>
+		<td colspan=2>Oficina</td>
+		<td>x</td>
+		<td colspan=2>Campo</td>
+		<td><br></td>
+		<td colspan=2>Otros</td>
+		<td colspan=3><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><b>COMPETENCIAS Y/O HABILIDADES REQUERIDAS PARA EL PUESTO:</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=2><b>A) Formación Académica:</b></td>
+		<td colspan=10><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td>Post Grado</td>
+		<td><br></td>
+		<td>Titulado</td>
+		<td><br></td>
+		<td>Bachiller</td>
+		<td><br></td>
+		<td>Tecnico</td>
+		<td><br></td>
+		<td Secundario></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=3 Nivel Requerido></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td rowspan=2>Especialidades/Maestría<br>Diplomados:</td>
+		<td colspan=11><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=11><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td>Observaciones: </td>
+		<td colspan=11><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td colspan=11><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=2><b>B) Experiencia Requerida:</b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b>C) Programas Informáticos:</b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td>Avanzado</td>
+		<td><br></td>
+		<td>Intermedio</td>
+		<td><br></td>
+		<td>Básico</td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=2><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=2><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b>PERFIL PERSONAL:</b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Estado Civil</td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td>Casado</td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Soltero</td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>No relevante</td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Sexo</td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td>Masculino</td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Femenino</td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>No Relevante</td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Rango de Edad</td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td>No relevante</td>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td>Si relevante De: </td>
+		<td><br></td>
+		<td>a</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+		<td><b><br></b></td>
+	</tr>
+	<tr>
+		<td h><br></td>
+		<td colspan=12><b>Observaciones:</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12><b>Remuneración mensual para puesto:<br>( A ser llenado por Jefe de Recursos Humanos)</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4 rowspan=3><br></td>
+		<td><b><br></b></td>
+		<td colspan=7 rowspan=3><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4><b>   FIRMA Y SELLO del solicitante </b></td>
+		<td><b><br></b></td>
+		<td colspan=7><b>FIRMA Y SELLO de la Gerencia responsable</b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=4 rowspan=3><br></td>
+		<td><b><br></b></td>
+		<td colspan=7 rowspan=3><br></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td><b><br></b></td>
+		</tr>
+	<tr>
+		<td> <br></td>
+		<td colspan=4><b>   FIRMA Y SELLO Jefe de Recursos Humanos</b></td>
+		<td><b><br></b></td>
+		<td colspan=7><b><i>FIRMA Y SELLO Gerente de Administración y Finanzas</i></b></td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12>* Medio tiempo : 4 Horas diarias - máximo de 24 hrs semanales incluye todos los beneficios.</td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12>** Tiempo Parcial: Un máximo de 3.45 hrs al día - nopuede exceder 18 hrs semanales - sólo incluye beneficio de gratificación y ESSALUD.</td>
+		</tr>
+	<tr>
+		<td><br></td>
+		<td colspan=12>*** Locación de servicio: Valor por hora - incluye todos los beneficios.</td>
+		</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

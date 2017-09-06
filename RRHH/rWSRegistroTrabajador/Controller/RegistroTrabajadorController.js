@@ -22,14 +22,15 @@ listarTodo = function (req, res) {
     }*/
 }
 //GET - Buscar por ID
-buscarById = function (req, res) {/*
+BuscarbyFiltro = function (req, res) {
     function ok(object) {
         res.send(object)
     }
     function error(error) {
         console.log(error)
     }
-    requerimientoDAO.buscar(req.params.id, ok, error)*/
+    console.log(req.body.filtro)
+    RegistroTrabajadorDAO.BuscarbyFiltro(req.body.filtro, ok, error)
 }
 //POST - Insertar nuevo registro
 insertarRegistro = function (req, res) {
@@ -75,7 +76,7 @@ modificarRegistro = function (req, res) {/*
     requerimientoDAO.modificar(requerimiento, ok, error)*/
 }
 /*
-exports.listarTodo = listarTodo
-exports.buscarById = buscarById*/
+exports.listarTodo = listarTodo*/
+exports.BuscarbyFiltro = BuscarbyFiltro
 exports.insertarRegistro = insertarRegistro
 /*exports.modificarRegistro = modificarRegistro*/

@@ -35,11 +35,11 @@ var api = express.Router()
 api.route('/RsegitroTrabajador')
    // .get(RegistroTrabajadorController.listarTodo)
     .post(RegistroTrabajadorController.insertarRegistro)
-/*
-api.route('/RegistroTrabajador/:id')
-    .get(RegistroTrabajadorController.buscarById)
-    .put(RegistroTrabajadorController.modificarRegistro)
-*/
+
+api.route('/Trabajador/filtro')
+    .post(RegistroTrabajadorController.BuscarbyFiltro)
+
+
 app.use('/service', api)
 
 app.listen(puerto, function () {

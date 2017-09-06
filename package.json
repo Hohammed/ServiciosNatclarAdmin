@@ -1,0 +1,20 @@
+{
+  "name": "rwscontrato",
+  "version": "1.0.0",
+  "description": "Servicio que devuelve los datos de las personas con contratos a terminar dentro de 3 días",
+  "main": "rWSContrato.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "deprecate": "^1.0.0",
+    "express": "^4.15.4",
+    "method-override": "^2.3.9",
+    "mssql": "^4.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Enrique Leiva Diaz",
+  "license": "ISC"
+}

@@ -9,15 +9,11 @@ function listar(ok, error) {/*
     helper.query(sql, "MAESTRO.sp_sel_estado_civil", [], ok, error)*/
 }
 
-function buscar(id, ok, error) {/*
+function BuscarbyFiltro(filtro, ok, error) {
     var parameters = []
-    var parameter = {
-        name: "cIdEstadoCivil",
-        //type: sql.VarChar,
-        value: id
-    }
+    var parameter = {name: "FILTRO", value: filtro}
     parameters.push(parameter);
-    helper.query(sql, "MAESTRO.sp_sel_estado_civil", parameters, ok, error)*/
+    helper.query(sql, "rhGlobal.SP_SEL_TRABAJADOR_BY_FILTRO_NUEVO", parameters, ok, error)
 }
 
 function insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosFamiliaresTrabajador,ok, error) {
@@ -66,7 +62,7 @@ function modificar(estadoCivil, ok, error) {/*
     helper.transaction(sql, "MAESTRO.sp_upd_estado_civil", parameters, ok, error)*/
 }
 /*
-exports.listar = listar
-exports.buscar = buscar*/
+exports.listar = listar*/
+exports.BuscarbyFiltro =BuscarbyFiltro
 exports.insertar = insertar
 /*exports.modificar = modificar*/
