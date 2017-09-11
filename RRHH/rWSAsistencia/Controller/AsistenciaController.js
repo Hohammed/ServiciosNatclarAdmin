@@ -86,6 +86,23 @@ function programarTareo(req, res){
     AsistenciaDao.programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaFin2,Tipo_T,FechaIni3,FechaFin3,Tipo_L, ok, error)
 }
 
+function buscarTareoProgramadobyIdTrabajador(req, res){
+    function ok(lista) {
+        res.status(200).send(lista)
+        console.log(lista)
+    }
+    function error(error) {
+        res.status(201).send(error)
+        console.log('ERROR: '+ error)
+    }
+
+    var iIdTrabajador = req.body.iIdTrabajador
+    console.log(req.body.iIdTrabajador)
+
+    AsistenciaDao.buscarTareoProgramadobyIdTrabajador(iIdTrabajador, ok, error)
+}
+
 exports.buscarByFiltro = buscarByFiltro
 exports.subirTareo = subirTareo
 exports.programarTareo = programarTareo
+exports.buscarTareoProgramadobyIdTrabajador = buscarTareoProgramadobyIdTrabajador

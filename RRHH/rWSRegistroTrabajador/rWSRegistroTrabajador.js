@@ -39,6 +39,8 @@ api.route('/RsegitroTrabajador')
 api.route('/Trabajador/filtro')
     .post(RegistroTrabajadorController.BuscarbyFiltro)
 
+api.route('/Trabajador/buscarTrabajadorbyDNI')
+    .post(RegistroTrabajadorController.buscarTrabajadorbyDNI)
 
 app.use('/service', api)
 

@@ -31,6 +31,14 @@ function programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaF
     helper.transaction(sql, "rhTareo.SP_INS_TAREO_PROGRAMADO", parameters, ok, error)
 }
 
+function buscarTareoProgramadobyIdTrabajador(iIdTrabajador, ok, error) {
+    var parameters = []
+        parameters.push({ name: "ID_TRAB", value: iIdTrabajador})
+        console.log(parameters)
+    helper.query(sql, "rhTareo.SP_SEL_TAREO_PROGRAMADO", parameters, ok, error)
+}
+
 exports.buscarByFiltro = buscarByFiltro
 exports.subirTareo = subirTareo
 exports.programarTareo = programarTareo
+exports.buscarTareoProgramadobyIdTrabajador = buscarTareoProgramadobyIdTrabajador
