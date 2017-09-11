@@ -18,6 +18,12 @@ function filtrar(idunidad, ok, error) {
     helper.query(sql, "Maestro.SP_SEL_DSP_EMPRESA_BY_UNIDAD_ORGANIZATIVA", parameters, ok, error)
 }
 
+function filtrarByGrupoEmpresarial(gruEmp, ok, error) {
+    var parameters = []
+    parameters.push({name: "GRUP_EMP", value: gruEmp})
+    helper.query(sql, "Maestro.SP_SEL_EMPRESA_BY_GRUPO_EMPRESARIAL", parameters, ok, error)
+}
+
 function buscar(id, ok, error) {
 }
 
@@ -49,6 +55,7 @@ console.log("EmpresaDAO: " +  JSON.stringify(EmpresaEntidadFinanciera))
 exports.mostrar = mostrar
 exports.listar = listar
 exports.filtrar = filtrar
+exports.filtrarByGrupoEmpresarial = filtrarByGrupoEmpresarial
 exports.buscar = buscar
 exports.insertar = insertar
 exports.modificar = modificar

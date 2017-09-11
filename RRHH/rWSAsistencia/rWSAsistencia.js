@@ -11,7 +11,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 8082
+var puerto = 8090
 
 /*controller*/
 var AsistenciaController = require('./Controller/AsistenciaController')
@@ -33,6 +33,15 @@ var api = express.Router()
 
 api.route('/Asistencia/filtro')
     .get(AsistenciaController.buscarByFiltro)
+
+api.route('/Asistencia/subirTareo')
+    .post(AsistenciaController.subirTareo)
+
+api.route('/Asistencia/programarTareo')
+    .post(AsistenciaController.programarTareo)
+
+api.route('/Asistencia/buscarTareoProgramadobyIdTrabajador')
+    .post(AsistenciaController.buscarTareoProgramadobyIdTrabajador)
 
 app.use('/service', api)
 

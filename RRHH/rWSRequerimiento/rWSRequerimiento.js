@@ -11,6 +11,14 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
+/*impresión */
+var JSZip = require('jszip');
+var Docxtemplater = require('docxtemplater');
+var fs = require('fs');
+var path = require('path');
+
+var pdf = require('html-pdf');
+
 var puerto = 3005
 
 /*controller*/
@@ -29,6 +37,9 @@ app.use(bodyParser.json())
 app.use(methodOverride())
 app.use(router)
 
+app.set('views', __dirname);
+app.set('view engine', 'html');
+
 var api = express.Router()
 
 api.route('/requerimiento')
@@ -40,6 +51,9 @@ api.route('/requerimiento/:id')
 
 api.route('/correosPorNotificar/:id')
     .get(requerimientoController.correosPorNotificar)
+
+api.route('/printer/:id')
+     .get(requerimientoController.printerById)
 
 app.use('/service', api)
 

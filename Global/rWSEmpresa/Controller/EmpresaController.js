@@ -18,6 +18,18 @@ filtrarByUnidadOrganizativa = function (req, res) {
     }
     empresaDAO.filtrar(req.body.iIdUnidadOrganizativa, ok, error)
 }
+
+filtrarByGrupoEmpresarial = function (req, res) {
+    function ok(lista) {
+        res.status(200).send(lista)
+    }
+    function error(error) {
+        console.log(error)
+        res.status(201).send(error)
+    }
+    empresaDAO.filtrarByGrupoEmpresarial(req.body.gruEmp, ok, error)
+}
+
 //GET - Buscar por ID
 buscarById = function (req, res) {
 }
@@ -59,6 +71,7 @@ Lista_CuentaBancaria_Empresa = function (request,response)
 exports.listarTodo = listarTodo
 exports.buscarById = buscarById
 exports.filtrarByUnidadOrganizativa = filtrarByUnidadOrganizativa
+exports.filtrarByGrupoEmpresarial = filtrarByGrupoEmpresarial
 exports.insertarRegistro = insertarRegistro
 exports.modificarRegistro = modificarRegistro
 exports.eliminarRegistro = eliminarRegistro

@@ -5,7 +5,7 @@ var bodyParser = require("body-parser")
 var methodOverride = require("method-override")
 var cors = require('cors')
 
-var puerto = 3001
+var puerto = 3081
 
 /*controller*/
 var empresaController = require('./Controller/EmpresaController')
@@ -36,6 +36,9 @@ api.route('/empresa/:id')
 
 api.route('/empresa/filtrarByUnidadOrganizativa')
     .post(empresaController.filtrarByUnidadOrganizativa)
+
+api.route('/empresa/filtrarByGrupoEmpresarial')
+    .post(empresaController.filtrarByGrupoEmpresarial)
 
 /*URL y verbos para EmpresaEntidadFinanciera*/
 api.route('/empresaentidafinanciera/:vcRucEmpresa/:vcIdEntidadFinanciera?')

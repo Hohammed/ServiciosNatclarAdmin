@@ -22,14 +22,15 @@ listarTodo = function (req, res) {
     }*/
 }
 //GET - Buscar por ID
-buscarById = function (req, res) {/*
+BuscarbyFiltro = function (req, res) {
     function ok(object) {
         res.send(object)
     }
     function error(error) {
         console.log(error)
     }
-    requerimientoDAO.buscar(req.params.id, ok, error)*/
+    console.log(req.body.filtro)
+    RegistroTrabajadorDAO.BuscarbyFiltro(req.body.filtro, ok, error)
 }
 //POST - Insertar nuevo registro
 insertarRegistro = function (req, res) {
@@ -43,6 +44,8 @@ insertarRegistro = function (req, res) {
     var DatosTelefonoTrabajador = req.body.DatosTelefonoTrabajador
     var DatosCorreoTrabajador = req.body.DatosCorreoTrabajador
     var DatosFamiliaresTrabajador = req.body.DatosFamiliaresTrabajador
+    var DatosLaboralesTrabajador = req.body.DatosLaboralesTrabajador
+    var DatosInternosTrabajador = req.body.DatosInternosTrabajador
     function ok(rowsAffected) {
         if (rowsAffected == 0) {
             res.send("No se llevó a cabo la transacción")
@@ -53,7 +56,18 @@ insertarRegistro = function (req, res) {
     function error(error) {
         res.status(201).send(error)
     }
-   RegistroTrabajadorDAO.insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosFamiliaresTrabajador,ok, error)
+   RegistroTrabajadorDAO.insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosFamiliaresTrabajador,DatosLaboralesTrabajador,DatosInternosTrabajador,ok, error)
+}
+
+buscarTrabajadorbyDNI = function (req, res) {
+    function ok(object) {
+        res.send(object)
+    }
+    function error(error) {
+        console.log(error)
+    }
+    console.log(req.body.vcNumeroDocumentoBuscarTrabajador)
+    RegistroTrabajadorDAO.buscarTrabajadorbyDNI(req.body.vcNumeroDocumentoBuscarTrabajador, ok, error)
 }
 
 //PUT - Actualizar registro
@@ -75,7 +89,8 @@ modificarRegistro = function (req, res) {/*
     requerimientoDAO.modificar(requerimiento, ok, error)*/
 }
 /*
-exports.listarTodo = listarTodo
-exports.buscarById = buscarById*/
+exports.listarTodo = listarTodo*/
+exports.BuscarbyFiltro = BuscarbyFiltro
 exports.insertarRegistro = insertarRegistro
+exports.buscarTrabajadorbyDNI = buscarTrabajadorbyDNI
 /*exports.modificarRegistro = modificarRegistro*/
