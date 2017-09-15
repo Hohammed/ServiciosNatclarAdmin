@@ -2,7 +2,6 @@ var sql = require('mssql')
 
 /*helper*/
 var helper = require('./../../../Helper/helper')
-var js2xmlparser = require("js2xmlparser")
 
 /*DAO*/
 function mostrar(ok, error) {
@@ -28,11 +27,7 @@ function buscarEmpresaPuestoSueldo(filtro, ok, error) {
 function buscar(id, ok, error) {
 }
 
-function insertarRegistro(EmpresaPuestoSueldo, ok, error) {
-    var parameters = []
-    parameters.push({ name: "EmpresaPuestoSueldo", value: js2xmlparser.parse("EmpresaPuestoSueldo", EmpresaPuestoSueldo) })
-    console.log(js2xmlparser.parse("EmpresaPuestoSueldo", EmpresaPuestoSueldo))
-    helper.transaction(sql, "cmGlobal.SP_UPD_CONTRATO_PROFESIONAL", parameters, ok, error)
+function insertar(unidadOrganizativa, ok, error) {
 }
 
 function modificar(unidadOrganizativa, ok, error) {
@@ -42,11 +37,11 @@ function eliminar(id, ok, error) {
 }
 
 exports.buscarEmpresaPuestoSueldo = buscarEmpresaPuestoSueldo
-exports.insertarRegistro = insertarRegistro
 /*
 exports.mostrar = mostrar
 exports.listar = listar
 
 exports.buscar = buscar
+exports.insertar = insertar
 exports.modificar = modificar
 exports.eliminar = eliminar*/

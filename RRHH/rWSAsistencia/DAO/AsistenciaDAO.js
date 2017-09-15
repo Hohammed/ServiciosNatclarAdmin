@@ -34,34 +34,11 @@ function programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaF
 function buscarTareoProgramadobyIdTrabajador(iIdTrabajador, ok, error) {
     var parameters = []
         parameters.push({ name: "ID_TRAB", value: iIdTrabajador})
-        console.log('buscarTareoProgramadobyIdTrabajador')
         console.log(parameters)
     helper.query(sql, "rhTareo.SP_SEL_TAREO_PROGRAMADO", parameters, ok, error)
-}
-
-function buscarAsistenciabyTareoProgramado(iIdTrabajador, FechaIni, FechaFin, ok, error) {
-    var parameters = []
-        parameters.push({ name: "ID_TRAB", value: iIdTrabajador})
-        parameters.push({ name: "FECHA_INI", value: FechaIni})
-        parameters.push({ name: "FECHA_FIN", value: FechaFin})
-         console.log('buscarAsistenciabyTareoProgramado')
-        console.log(parameters)
-    helper.query(sql, "rhTareo.SP_SEL_ASISTENCIA_BY_TAREO_PROGRAMADO", parameters, ok, error)
-}
-
-function UpdateTareoProgramado(dfecha, TipoTP, iIdAsistenciaTP, ok, error) {
-    var parameters = []
-        parameters.push({ name: "iIdAsistencia", value: iIdAsistenciaTP})
-        parameters.push({ name: "FECHA", value: dfecha})
-        parameters.push({ name: "TAREO", value: TipoTP})
-        console.log('UpdateTareoProgramado')
-        console.log(parameters)
-    helper.transaction(sql, "rhTareo.SP_UPD_TAREO_PROGRAMADO", parameters, ok, error)
 }
 
 exports.buscarByFiltro = buscarByFiltro
 exports.subirTareo = subirTareo
 exports.programarTareo = programarTareo
 exports.buscarTareoProgramadobyIdTrabajador = buscarTareoProgramadobyIdTrabajador
-exports.buscarAsistenciabyTareoProgramado = buscarAsistenciabyTareoProgramado
-exports.UpdateTareoProgramado = UpdateTareoProgramado

@@ -26,19 +26,8 @@ buscarEmpresaPuestoSueldo = function (req, res) {
 
 //POST - Insertar nuevo registro
 insertarRegistro = function (req, res) {
-    console.log(req.body.EmpresaPuestoSueldo)
-    var EmpresaPuestoSueldo = req.body.EmpresaPuestoSueldo
-
-    //var EmpresaPuestoSueldo= req.body;
-    function ok(lista) {
-        res.status(200).send(lista)
-        console.log(lista)
-    }
-    function error(error) {
-        res.status(201).send(error)
-        console.log('ERROR: '+ error)
-    }
-    empresaDAO.insertarRegistro(EmpresaPuestoSueldo, ok, error)
+    console.log(req.body.DatosEmpresa)
+    //var DatosPersonalesTrabajador = req.body.DatosEmpresa
 }
 
 //PUT - Actualizar registro

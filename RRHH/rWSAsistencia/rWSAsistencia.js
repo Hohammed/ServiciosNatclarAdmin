@@ -43,12 +43,6 @@ api.route('/Asistencia/programarTareo')
 api.route('/Asistencia/buscarTareoProgramadobyIdTrabajador')
     .post(AsistenciaController.buscarTareoProgramadobyIdTrabajador)
 
-api.route('/Asistencia/buscarAsistenciabyTareoProgramado')
-.post(AsistenciaController.buscarAsistenciabyTareoProgramado)
-
-api.route('/Asistencia/UpdateTareoProgramado')
-.post(AsistenciaController.UpdateTareoProgramado)
-
 app.use('/service', api)
 
 app.listen(puerto, function () {
