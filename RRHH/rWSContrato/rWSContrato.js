@@ -67,7 +67,7 @@ function error(error) {
 }
 
 setInterval(function (/*ok,err*/) {
-    helper.query(sql, "rhPlanilla.SP_BUSCAR_CONTRATO_POR_TERMINAR", [], ok, error)
+    helper.query(sql, "rhPlanilla.SP_SEL_CONTRATO_POR_TERMINAR", [], ok, error)
     function ok(lista) {
            lista.forEach(function(item, index){
                var data 
