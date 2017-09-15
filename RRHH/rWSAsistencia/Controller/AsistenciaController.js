@@ -102,44 +102,7 @@ function buscarTareoProgramadobyIdTrabajador(req, res){
     AsistenciaDao.buscarTareoProgramadobyIdTrabajador(iIdTrabajador, ok, error)
 }
 
-function buscarAsistenciabyTareoProgramado(req, res){
-    function ok(lista) {
-        res.status(200).send(lista)
-        console.log(lista)
-    }
-    function error(error) {
-        res.status(201).send(error)
-        console.log('ERROR: '+ error)
-    }
-
-    var iIdTrabajador = req.body.iIdTrabajador
-    var FechaIni = req.body.FechaIni
-    var FechaFin = req.body.FechaFin
-    console.log(req.body.iIdTrabajador)
-
-    AsistenciaDao.buscarAsistenciabyTareoProgramado(iIdTrabajador, FechaIni, FechaFin, ok, error)
-}
-
-function UpdateTareoProgramado(req, res){
-    function ok(lista) {
-        res.status(200).send(200)
-        console.log(lista)
-    }
-    function error(error) {
-        res.status(201).send(error)
-        console.log('ERROR: '+ error)
-    }
-
-    var dfecha = req.body.dfecha
-    var TipoTP = req.body.TipoTP
-    var iIdAsistenciaTP = req.body.iIdAsistenciaTP
-
-    AsistenciaDao.UpdateTareoProgramado(dfecha, TipoTP, iIdAsistenciaTP, ok, error)
-}
-
 exports.buscarByFiltro = buscarByFiltro
 exports.subirTareo = subirTareo
 exports.programarTareo = programarTareo
 exports.buscarTareoProgramadobyIdTrabajador = buscarTareoProgramadobyIdTrabajador
-exports.buscarAsistenciabyTareoProgramado = buscarAsistenciabyTareoProgramado
-exports.UpdateTareoProgramado = UpdateTareoProgramado

@@ -12,7 +12,7 @@ function mostrar(ok, error) {
         value: 1
     }
     parameters.push(parameter);*/
-    helper.query(sql, "Maestro.SP_SEL_TIPO_MEDIO_PAGO_FOR_RRHH", [], ok, error)
+    helper.query(sql, "rMaestro.SP_SEL_TIPO_MEDIO_PAGO_FOR_RRHH", [], ok, error)
 }
 
 function listar(ok, error) {
