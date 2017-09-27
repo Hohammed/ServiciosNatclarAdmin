@@ -16,9 +16,10 @@ function subirTareo(asistencia, ok, error) {
     helper.transaction(sql, "NatclarAdmin.rhTareo.SP_INS_TAREO_MASIVO", parameters, ok, error)
 }
 
-function programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaFin2,Tipo_T,FechaIni3,FechaFin3,Tipo_L, ok, error) {
+//function programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaFin2,Tipo_T,FechaIni3,FechaFin3,Tipo_L, ok, error) {
+function programarTareo(TAREO_PROGRAMADO, ok, error) {
     var parameters = []
-        parameters.push({ name: "ID_TRAB", value: iIdTrabajador})
+       /* parameters.push({ name: "ID_TRAB", value: iIdTrabajador})
         parameters.push({ name: "FECHA_INI", value: FechaIni})
         parameters.push({ name: "FECHA_FIN_CAPACITACION", value: FechaFin})
         parameters.push({ name: "TAREO1", value: Tipo_CI})
@@ -28,6 +29,9 @@ function programarTareo(iIdTrabajador,FechaIni,FechaFin,Tipo_CI,FechaIni2,FechaF
         parameters.push({ name: "FECHA_INI_LIBRE", value: FechaIni3})
         parameters.push({ name: "FECHA_FIN_LIBRE", value: FechaFin3})
         parameters.push({ name: "TAREO3", value: Tipo_L})
+    helper.transaction(sql, "rhTareo.SP_INS_TAREO_PROGRAMADO", parameters, ok, error)*/
+      parameters.push({ name: "TAREO_PROGRAMADO", value: js2xmlparser.parse("TAREO_PROGRAMADO", TAREO_PROGRAMADO) })
+      console.log(js2xmlparser.parse("TAREO_PROGRAMADO", TAREO_PROGRAMADO))
     helper.transaction(sql, "rhTareo.SP_INS_TAREO_PROGRAMADO", parameters, ok, error)
 }
 

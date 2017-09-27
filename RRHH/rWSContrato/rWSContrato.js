@@ -108,9 +108,12 @@ setInterval(function (/*ok,err*/) {
                      '<button class="form-control btn btn-success">RENOVAR</button><button class="form-control btn btn-danger">SOLICITAR PERSONAL</button>',
                     */ 
                 var options = {
-                host: 'localhost',
+               /* host: 'localhost',
                 port: '3011',
-                path: '/Service/enviarCorreo',
+                path: '/Service/enviarCorreo',*/
+                host: 'admin_erp.natclar.com.pe',
+                port: '12000',
+                path: '/NODE/GLOBAL/rWSCorreo/enviarCorreo',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
@@ -136,6 +139,6 @@ setInterval(function (/*ok,err*/) {
 
            })
     }
-}, 4*60*60*1000);//4 HORAS INICIA 3:30
+//}, 4*60*60*1000);//4 HORAS INICIA 3:30
 //}, 60*60*1000);--1 HORA
-//}, 10000);--1 SEGUNDO
+}, 10000);//1 SEGUNDO

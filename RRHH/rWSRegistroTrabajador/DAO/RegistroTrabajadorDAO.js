@@ -16,7 +16,7 @@ function BuscarbyFiltro(filtro, ok, error) {
     helper.query(sql, "rhGlobal.SP_SEL_TRABAJADOR_BY_FILTRO_NUEVO", parameters, ok, error)
 }
 
-function insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosFamiliaresTrabajador,DatosLaboralesTrabajador,DatosInternosTrabajador,ok, error) {
+function insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosLaboralesTrabajador,DatosInternosTrabajador,DatosFamiliaresTrabajador,ok, error) {
     //var xml = trabajador.DETALLE_XML
     var parameters = []
     /*parameters.push({ name: "iIdTrabajador", value: trabajador.iIdTrabajador })
@@ -36,17 +36,17 @@ function insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelef
     parameters.push({ name: "DatosDireccionTrabajador", value: js2xmlparser.parse("DatosDireccionTrabajador", DatosDireccionTrabajador) })
     parameters.push({ name: "DatosTelefonoTrabajador", value: js2xmlparser.parse("DatosTelefonoTrabajador", DatosTelefonoTrabajador) })
     parameters.push({ name: "DatosCorreoTrabajador", value: js2xmlparser.parse("DatosCorreoTrabajador", DatosCorreoTrabajador) })
-    parameters.push({ name: "DatosFamiliaresTrabajador", value: js2xmlparser.parse("DatosFamiliaresTrabajador", DatosFamiliaresTrabajador) })
     parameters.push({ name: "DatosLaboralesTrabajador", value: js2xmlparser.parse("DatosLaboralesTrabajador", DatosLaboralesTrabajador) })
     parameters.push({ name: "DatosInternosTrabajador", value: js2xmlparser.parse("DatosInternosTrabajador", DatosInternosTrabajador) })
+    parameters.push({ name: "DatosFamiliaresTrabajador", value: js2xmlparser.parse("DatosFamiliaresTrabajador", DatosFamiliaresTrabajador) })
     
     console.log(js2xmlparser.parse("DatosPersonalesTrabajador", DatosPersonalesTrabajador))
     console.log(js2xmlparser.parse("DatosDireccionTrabajador", DatosDireccionTrabajador))
     console.log(js2xmlparser.parse("DatosTelefonoTrabajador", DatosTelefonoTrabajador))
     console.log(js2xmlparser.parse("DatosCorreoTrabajador", DatosCorreoTrabajador))
-    console.log(js2xmlparser.parse("DatosFamiliaresTrabajador", DatosFamiliaresTrabajador))
     console.log(js2xmlparser.parse("DatosLaboralesTrabajador", DatosLaboralesTrabajador))
     console.log(js2xmlparser.parse("DatosInternosTrabajador", DatosInternosTrabajador))
+    console.log(js2xmlparser.parse("DatosFamiliaresTrabajador", DatosFamiliaresTrabajador))
     helper.transaction(sql, "rhGlobal.SP_INS_DATOS_TRABAJADOR", parameters, ok, error)
 }
 
