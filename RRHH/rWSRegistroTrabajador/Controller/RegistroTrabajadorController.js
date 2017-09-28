@@ -43,9 +43,9 @@ insertarRegistro = function (req, res) {
     var DatosDireccionTrabajador = req.body.DatosDireccionTrabajador
     var DatosTelefonoTrabajador = req.body.DatosTelefonoTrabajador
     var DatosCorreoTrabajador = req.body.DatosCorreoTrabajador
-    var DatosFamiliaresTrabajador = req.body.DatosFamiliaresTrabajador
     var DatosLaboralesTrabajador = req.body.DatosLaboralesTrabajador
     var DatosInternosTrabajador = req.body.DatosInternosTrabajador
+    var DatosFamiliaresTrabajador = req.body.DatosFamiliaresTrabajador
     function ok(rowsAffected) {
         if (rowsAffected == 0) {
             res.send("No se llevó a cabo la transacción")
@@ -56,7 +56,7 @@ insertarRegistro = function (req, res) {
     function error(error) {
         res.status(201).send(error)
     }
-   RegistroTrabajadorDAO.insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosFamiliaresTrabajador,DatosLaboralesTrabajador,DatosInternosTrabajador,ok, error)
+   RegistroTrabajadorDAO.insertar(DatosPersonalesTrabajador, DatosDireccionTrabajador,DatosTelefonoTrabajador,DatosCorreoTrabajador,DatosLaboralesTrabajador,DatosInternosTrabajador,DatosFamiliaresTrabajador,ok, error)
 }
 
 buscarTrabajadorbyDNI = function (req, res) {

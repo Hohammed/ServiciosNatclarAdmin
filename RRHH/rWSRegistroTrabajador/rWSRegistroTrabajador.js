@@ -32,7 +32,7 @@ app.use(router)
 
 var api = express.Router()
 
-api.route('/RsegitroTrabajador')
+api.route('/RegistroTrabajador')
    // .get(RegistroTrabajadorController.listarTodo)
     .post(RegistroTrabajadorController.insertarRegistro)
 

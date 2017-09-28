@@ -1,0 +1,14 @@
+{
+  "name": "rwscontratobyarea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rWSContratoByArea.js",
+  "author": "Jorge Enrique Leiva Diaz",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "method-override": "^2.3.9",
+    "mssql": "^4.0.4"
+  }
+}
